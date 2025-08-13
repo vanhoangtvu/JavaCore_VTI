@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS final_exam CHARACTER SET utf8mb4;
+USE final_exam;
+
+CREATE TABLE IF NOT EXISTS candidates (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(50) NOT NULL,
+  last_name  VARCHAR(50) NOT NULL,
+  phone VARCHAR(12) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL,
+  candidate_type ENUM('EXPERIENCE','FRESHER') NOT NULL,
+  exp_in_year INT NULL,
+  pro_skill   VARCHAR(50) NULL,
+  graduation_rank ENUM('EXCELLENCE','GOOD','FAIR','POOR') NULL
+);
